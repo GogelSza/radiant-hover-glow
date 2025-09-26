@@ -18,7 +18,7 @@ export function GlowingEffectDemo() {
           </p>
         </div>
         
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <GridItem index={0} number="01" icon={<Dna className="h-7 w-7" />} title="Design of Lipid-Based Drug Delivery Systems" description="We engineer proprietary LBDDS platforms to address solubility, stability, and absorption challenges — enabling oral delivery of small molecules and biologics." isActive={activeItems.has(0)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={1} number="02" icon={<FlaskConical className="h-7 w-7" />} title="Preclinical Validation" description="Our delivery systems are rigorously validated through in vitro and in vivo studies, including pharmacokinetic modeling and intestinal barrier assays." isActive={activeItems.has(1)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={2} number="03" icon={<Shield className="h-7 w-7" />} title="Patent Protection" description="We implement strategic, international IP frameworks to secure exclusivity and long-term commercial value for each technology." isActive={activeItems.has(2)} isMobile={isMobile} registerElement={registerElement} />
@@ -52,7 +52,7 @@ const GridItem = ({
   registerElement
 }: GridItemProps) => {
   return <li 
-    className="min-h-[14rem] list-none"
+    className="min-h-[10rem] list-none"
     ref={(el) => registerElement(el, index)}
   >
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
@@ -64,7 +64,7 @@ const GridItem = ({
           inactiveZone={0.01} 
           borderWidth={3} 
         />
-        <div className="relative flex h-full flex-col justify-center items-center gap-3 overflow-hidden rounded-xl border-[0.75px] bg-background p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-5">
+        <div className="relative flex h-full flex-col justify-center items-center gap-3 overflow-hidden rounded-xl bg-background p-3 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-4">
           <div className="relative flex flex-col items-center gap-3 text-center">
             <div className="flex items-center justify-between w-full">
               <div className="text-red-500">
