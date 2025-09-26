@@ -1,52 +1,70 @@
 "use client";
 
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { Dna, FlaskConical, Shield, Package, Users, FileText, ArrowRightLeft, Building2 } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 
 export function GlowingEffectDemo() {
   return (
     <div className="min-h-screen bg-background p-8">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Interactive Glowing Cards
+            Our Development Model
           </h1>
-          <p className="text-xl text-muted-foreground">
-            Move your mouse over the cards to see the magic ✨
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+            From concept to commercial scale, our integrated approach covers every stage of lipid-based drug delivery development.
           </p>
         </div>
         
-        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <GridItem
-            area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-            icon={<Box className="h-4 w-4" />}
-            title="Beautiful Interactions"
-            description="Experience smooth, responsive animations that follow your cursor with perfect precision."
+            number="01"
+            icon={<Dna className="h-5 w-5" />}
+            title="Design of Lipid-Based Drug Delivery Systems"
+            description="We engineer proprietary LBDDS platforms to address solubility, stability, and absorption challenges — enabling oral delivery of small molecules and biologics."
           />
           <GridItem
-            area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-            icon={<Settings className="h-4 w-4" />}
-            title="Highly Customizable"
-            description="Adjust proximity, spread, blur, and animation timing to create the perfect effect for your design."
+            number="02"
+            icon={<FlaskConical className="h-5 w-5" />}
+            title="Preclinical Validation"
+            description="Our delivery systems are rigorously validated through in vitro and in vivo studies, including pharmacokinetic modeling and intestinal barrier assays."
           />
           <GridItem
-            area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-            icon={<Lock className="h-4 w-4" />}
-            title="Performance Optimized"
-            description="Built with RequestAnimationFrame and efficient event handling for buttery smooth performance."
+            number="03"
+            icon={<Shield className="h-5 w-5" />}
+            title="Patent Protection"
+            description="We implement strategic, international IP frameworks to secure exclusivity and long-term commercial value for each technology."
           />
           <GridItem
-            area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-            icon={<Sparkles className="h-4 w-4" />}
-            title="Modern Design"
-            description="Leverages cutting-edge CSS features and React patterns for a truly modern experience."
+            number="04"
+            icon={<Package className="h-5 w-5" />}
+            title="Development of Xenira's Own Products"
+            description="We apply our platforms to create a pipeline of pharmaceutical raw materials and super generics — enhancing established APIs with improved bioavailability."
           />
           <GridItem
-            area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-            icon={<Search className="h-4 w-4" />}
-            title="Easy Integration"
-            description="Drop-in component that works seamlessly with your existing design system and styling."
+            number="05"
+            icon={<Users className="h-5 w-5" />}
+            title="Partner-Driven Innovation"
+            description="We collaborate with pharmaceutical companies to turn their active agents into novel, commercially attractive oral therapies using Xenira's proprietary technologies."
+          />
+          <GridItem
+            number="06"
+            icon={<FileText className="h-5 w-5" />}
+            title="Regulatory Strategy & Registration"
+            description="Once proof-of-concept is achieved, we prepare CTD dossiers in line with ICH guidelines — ready to support registration with EMA and other global regulators."
+          />
+          <GridItem
+            number="07"
+            icon={<ArrowRightLeft className="h-5 w-5" />}
+            title="Licensing & Technology Transfer"
+            description="We offer flexible out-licensing models — with or without technology transfer — allowing partners to advance product development using validated, IP-secured platforms."
+          />
+          <GridItem
+            number="08"
+            icon={<Building2 className="h-5 w-5" />}
+            title="EU-GMP Manufacturing"
+            description="Our in-house cleanroom facility, built to EU-GMP standards, enables contract manufacturing for clinical batches, validation, and commercial production."
           />
         </ul>
       </div>
@@ -55,15 +73,15 @@ export function GlowingEffectDemo() {
 }
 
 interface GridItemProps {
-  area: string;
+  number: string;
   icon: React.ReactNode;
   title: string;
-  description: React.ReactNode;
+  description: string;
 }
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+const GridItem = ({ number, icon, title, description }: GridItemProps) => {
   return (
-    <li className={cn("min-h-[14rem] list-none", area)}>
+    <li className="min-h-[20rem] list-none">
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
         <GlowingEffect
           spread={40}
@@ -74,15 +92,20 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
           borderWidth={3}
         />
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-          <div className="relative flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
-              {icon}
+          <div className="relative flex flex-1 flex-col justify-between gap-4">
+            <div className="flex items-start justify-between">
+              <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
+                {icon}
+              </div>
+              <span className="text-2xl font-bold text-red-500 opacity-60">
+                {number}
+              </span>
             </div>
             <div className="space-y-3">
-              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-foreground">
+              <h3 className="pt-0.5 text-lg leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] text-balance text-foreground">
                 {title}
               </h3>
-              <p className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground">
+              <p className="font-sans text-sm leading-[1.25rem] text-muted-foreground">
                 {description}
               </p>
             </div>
