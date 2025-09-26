@@ -7,7 +7,7 @@ import { useMobileScrollGlow } from "@/hooks/use-mobile-scroll-glow";
 export function GlowingEffectDemo() {
   const { activeItems, registerElement, isMobile } = useMobileScrollGlow();
   
-  return <div className="min-h-screen bg-background p-8">
+  return <div className="min-h-screen bg-background p-4">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">
@@ -18,7 +18,7 @@ export function GlowingEffectDemo() {
           </p>
         </div>
         
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <GridItem index={0} number="01" icon={<Dna className="h-7 w-7" />} title="Design of Lipid-Based Drug Delivery Systems" description="We engineer proprietary LBDDS platforms to address solubility, stability, and absorption challenges — enabling oral delivery of small molecules and biologics." isActive={activeItems.has(0)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={1} number="02" icon={<FlaskConical className="h-7 w-7" />} title="Preclinical Validation" description="Our delivery systems are rigorously validated through in vitro and in vivo studies, including pharmacokinetic modeling and intestinal barrier assays." isActive={activeItems.has(1)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={2} number="03" icon={<Shield className="h-7 w-7" />} title="Patent Protection" description="We implement strategic, international IP frameworks to secure exclusivity and long-term commercial value for each technology." isActive={activeItems.has(2)} isMobile={isMobile} registerElement={registerElement} />
