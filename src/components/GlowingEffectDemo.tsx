@@ -81,7 +81,7 @@ interface GridItemProps {
 
 const GridItem = ({ number, icon, title, description }: GridItemProps) => {
   return (
-    <li className="min-h-[20rem] list-none">
+    <li className="min-h-[14rem] list-none">
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
         <GlowingEffect
           spread={40}
@@ -91,13 +91,13 @@ const GridItem = ({ number, icon, title, description }: GridItemProps) => {
           inactiveZone={0.01}
           borderWidth={3}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-          <div className="relative flex flex-1 flex-col justify-between gap-4">
-            <div className="flex items-start justify-between">
-              <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
+        <div className="relative flex h-full flex-col justify-center items-center gap-4 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+          <div className="relative flex flex-col items-center gap-4 text-center">
+            <div className="flex items-center justify-between w-full">
+              <div className="text-red-500">
                 {icon}
               </div>
-              <span className="text-2xl font-bold text-red-500 opacity-60">
+              <span className="text-2xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
                 {number}
               </span>
             </div>
