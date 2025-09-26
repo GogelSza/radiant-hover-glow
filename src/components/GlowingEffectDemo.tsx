@@ -64,8 +64,8 @@ const GridItem = ({
           inactiveZone={0.01} 
           borderWidth={3} 
         />
-        <div className="relative flex h-full flex-col justify-center items-center gap-4 overflow-hidden rounded-xl bg-background p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-          <div className="relative flex flex-col items-start gap-4 text-left">
+        <div className="relative flex h-full flex-col justify-center items-center gap-4 overflow-hidden rounded-xl bg-background p-4 md:p-6">
+          <div className="relative flex flex-col items-start gap-4 text-left w-full">
             <div className="flex items-center justify-between w-full">
               <div className="text-red-500">
                 {icon}
@@ -75,7 +75,7 @@ const GridItem = ({
               </span>
             </div>
             <div className="space-y-3">
-              <h3 className="pt-0.5 leading-[1.3rem] font-semibold font-sans tracking-wide text-balance text-black text-left text-2xl mb-1">
+              <h3 className="leading-[1.3rem] font-semibold font-sans tracking-wide text-balance text-black text-left text-2xl mb-1">
                 {title}
               </h3>
               <p className="font-sans leading-[1.4rem] text-left text-lg font-light text-black">
