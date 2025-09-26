@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 export function useMobileScrollGlow() {
   const [activeItems, setActiveItems] = useState<Set<number>>(new Set());
@@ -38,12 +38,12 @@ export function useMobileScrollGlow() {
     };
   }, []);
 
-  const registerElement = (element: HTMLElement | null, index: number) => {
+  const registerElement = useCallback((element: HTMLElement | null, index: number) => {
     if (element && observerRef.current && isMobile.current) {
       element.setAttribute('data-index', index.toString());
       observerRef.current.observe(element);
     }
-  };
+  }, []);
 
   return { activeItems, registerElement, isMobile: isMobile.current };
 }
