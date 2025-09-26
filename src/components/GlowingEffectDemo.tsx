@@ -5,18 +5,15 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 import { useMobileScrollGlow } from "@/hooks/use-mobile-scroll-glow";
 export function GlowingEffectDemo() {
-  const {
-    activeItems,
-    registerElement,
-    isMobile
-  } = useMobileScrollGlow();
+  const { activeItems, registerElement, isMobile } = useMobileScrollGlow();
+  
   return <div className="min-h-screen bg-background p-8">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">
             Our Development Model
           </h1>
-          <p className="max-w-4xl mx-auto text-2xl font-light text-black">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
             From concept to commercial scale, our integrated approach covers every stage of lipid-based drug delivery development.
           </p>
         </div>
@@ -54,9 +51,19 @@ const GridItem = ({
   isMobile,
   registerElement
 }: GridItemProps) => {
-  return <li className="min-h-[10rem] list-none" ref={el => registerElement(el, index)}>
+  return <li 
+    className="min-h-[10rem] list-none"
+    ref={(el) => registerElement(el, index)}
+  >
       <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
-        <GlowingEffect spread={40} glow={true} disabled={isMobile ? !isActive : false} proximity={64} inactiveZone={0.01} borderWidth={3} />
+        <GlowingEffect 
+          spread={40} 
+          glow={true} 
+          disabled={isMobile ? !isActive : false} 
+          proximity={64} 
+          inactiveZone={0.01} 
+          borderWidth={3} 
+        />
         <div className="relative flex h-full flex-col justify-center items-center gap-3 overflow-hidden rounded-xl bg-background p-3 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-4">
           <div className="relative flex flex-col items-center gap-3 text-center">
             <div className="flex items-center justify-between w-full">
@@ -68,10 +75,10 @@ const GridItem = ({
               </span>
             </div>
             <div className="space-y-2">
-              <h3 className="pt-0.5 leading-[1.2rem] font-semibold font-sans tracking-[-0.04em] text-balance text-foreground text-left text-2xl py-0">
+              <h3 className="pt-0.5 leading-[1.2rem] font-semibold font-sans tracking-[-0.04em] text-balance text-foreground text-left text-lg">
                 {title}
               </h3>
-              <p className="font-sans leading-[1.1rem] text-left text-lg font-light text-black">
+              <p className="font-sans leading-[1.1rem] text-left text-sm font-light text-muted-foreground">
                 {description}
               </p>
             </div>
