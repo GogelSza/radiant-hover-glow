@@ -18,7 +18,7 @@ export function GlowingEffectDemo() {
           </p>
         </div>
         
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <GridItem index={0} number="01" icon={<Dna className="h-7 w-7" />} title="Design of Lipid-Based Drug Delivery Systems" description="We engineer proprietary LBDDS platforms to address solubility, stability, and absorption challenges — enabling oral delivery of small molecules and biologics." isActive={activeItems.has(0)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={1} number="02" icon={<FlaskConical className="h-7 w-7" />} title="Preclinical Validation" description="Our delivery systems are rigorously validated through in vitro and in vivo studies, including pharmacokinetic modeling and intestinal barrier assays." isActive={activeItems.has(1)} isMobile={isMobile} registerElement={registerElement} />
           <GridItem index={2} number="03" icon={<Shield className="h-7 w-7" />} title="Patent Protection" description="We implement strategic, international IP frameworks to secure exclusivity and long-term commercial value for each technology." isActive={activeItems.has(2)} isMobile={isMobile} registerElement={registerElement} />
@@ -65,7 +65,7 @@ const GridItem = ({
           borderWidth={3} 
         />
         <div className="relative flex h-full flex-col justify-center items-center gap-4 overflow-hidden rounded-xl bg-background p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-          <div className="relative flex flex-col items-center gap-4 text-center">
+          <div className="relative flex flex-col items-start gap-4 text-left">
             <div className="flex items-center justify-between w-full">
               <div className="text-red-500">
                 {icon}
@@ -75,10 +75,10 @@ const GridItem = ({
               </span>
             </div>
             <div className="space-y-3">
-              <h3 className="pt-0.5 leading-[1.3rem] font-semibold font-sans tracking-[-0.04em] text-balance text-black text-center text-2xl">
+              <h3 className="pt-0.5 leading-[1.3rem] font-semibold font-sans tracking-wide text-balance text-black text-left text-2xl mb-1">
                 {title}
               </h3>
-              <p className="font-sans leading-[1.4rem] text-center text-lg font-light text-black">
+              <p className="font-sans leading-[1.4rem] text-left text-lg font-light text-black">
                 {description}
               </p>
             </div>
